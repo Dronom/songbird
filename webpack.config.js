@@ -1,10 +1,12 @@
+// eslint-disable-next-line no-unused-vars
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 function NothingPlugin() {
+  // eslint-disable-next-line func-names
   this.apply = function () {};
 }
 
