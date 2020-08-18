@@ -1,0 +1,8 @@
+.movies-description {
+  margin-left: auto;
+  width: 48%;
+
+  @media screen and (max-width: $device-width-medium) {
+    width: 100%;
+  }
+}

@@ -1,0 +1,14 @@
+.random-movie-section {
+  display: flex;
+
+  &__poster {
+    width: 200px;
+    object-fit: cover;
+  }
+
+  &__container {
+    display: flex;
+    margin-left: 40px;
+    width: 100%;
+  }
+}

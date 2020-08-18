@@ -1,0 +1,54 @@
+.movies-list {
+  width: 48%;
+
+  &__item {
+    position: relative;
+    border: 1px solid #444;
+    padding: 10px;
+    cursor: pointer;
+
+    &:first-child {
+      border-top-left-radius: 0.25rem;
+      border-top-right-radius: 0.25rem;
+    }
+
+    &:last-child {
+      border-bottom-right-radius: 0.25rem;
+      border-bottom-left-radius: 0.25rem;
+    }
+
+    &:nth-child(n + 2) {
+      border-top-width: 0;
+    }
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: grey;
+      margin-right: 10px;
+    }
+
+    &:hover {
+      background-color: #444;
+    }
+  }
+
+  @media screen and (max-width: $device-width-medium) {
+    width: 100%;
+  }
+}
+
+.error {
+  &::before {
+    background-color: #d62c1a;
+  }
+}
+
+.success {
+  &::before {
+    background-color: #00bc8c;
+  }
+}

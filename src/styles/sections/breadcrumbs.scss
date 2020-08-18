@@ -1,0 +1,30 @@
+.breadcrumbs {
+  margin-bottom: 30px;
+
+  &__ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #007c5d;
+    border-radius: 10px;
+  }
+  &__step {
+    padding: 5px 10px;
+    background-color: #007c5d;
+    text-align: center;
+
+    &:first-child {
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+    @media screen and (max-width: $device-width-small) {
+      width: 33%;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+@import './vars.scss';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body {
+  background-color: #222;
+  color: #fff;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+
+  @media screen and (max-width: $device-width-full) {
+    width: $device-width-large;
+  }
+
+  @media screen and (max-width: $device-width-large) {
+    width: $device-width-medium;
+  }
+
+  @media screen and (max-width: $device-width-medium) {
+    width: $device-width-small;
+  }
+
+  @media screen and (max-width: $device-width-small) {
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+
+.section {
+  border-radius: 5px;
+}
+
+.movies-section {
+  background-color: 1px solid #444;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  width: 100%;
+
+  &:not(.movies-list) {
+    padding: 20px;
+    border: 1px solid #444;
+  }
+}
+
+.next-button {
+  background-color: #00bc8c;
+  border: 1px solid #444;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 10px 15px;
+  width: 100%;
+
+  &:hover {
+    background-color: #00d09b;
+  }
+}
