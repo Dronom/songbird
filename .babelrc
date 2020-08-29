@@ -2,7 +2,14 @@
   "presets": [
     [
       "@babel/preset-env",
-      { "modules": false, "useBuiltIns": "entry", "corejs": "3.6" }
+      {
+        "modules": false,
+        "useBuiltIns": "entry",
+        "corejs": "3.6",
+        "targets": {
+          "esmodules": true
+        }
+      }
     ],
     "@babel/preset-react"
   ]

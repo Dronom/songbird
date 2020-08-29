@@ -1,5 +1,6 @@
 .breadcrumbs {
   margin-bottom: 30px;
+  width: 100%;
 
   &__ul {
     display: flex;
@@ -8,10 +9,13 @@
     background-color: #007c5d;
     border-radius: 10px;
   }
+
   &__step {
-    padding: 5px 10px;
+    padding: 5px;
     background-color: #007c5d;
+    flex-grow: 1;
     text-align: center;
+    font-size: 18px;
 
     &:first-child {
       border-top-left-radius: 10px;
@@ -27,4 +31,8 @@
       width: 33%;
     }
   }
+}
+
+.current {
+  background-color: #00ab90;
 }

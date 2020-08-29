@@ -1,18 +1,21 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { I18nextProvider } from 'react-i18next';
 
 import './styles/index.scss';
 
-import Header from './components/Header';
-import Breadcrumbs from './components/Breadcrumbs';
-import MovieSection from './components/MovieSection';
+import App from './components/App';
 
-const App = () => (
-  <div className="container">
-    <Header />
-    <Breadcrumbs />
-    <MovieSection />
-  </div>
+import i18next from './helpers/translate/i18next';
+import configureStore from './redux';
+
+const Main = () => (
+  <Provider store={configureStore}>
+    <I18nextProvider i18n={i18next}>
+      <App />
+    </I18nextProvider>
+  </Provider>
 );
 
-render(<App />, document.getElementById('app'));
+render(<Main />, document.getElementById('app'));

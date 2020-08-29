@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 const webpack = require('webpack');
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -30,7 +31,7 @@ const config = (env) => ({
         loader: 'eslint-loader',
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|jpg|gif)$/,
         use: [
           {
             loader: 'url-loader',
@@ -40,8 +41,9 @@ const config = (env) => ({
           },
         ],
       },
+      { test: /\.svg$/, use: ['@svgr/webpack'] },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        test: /\.(woff|woff2|eot|ttf|otf|mp3)$/,
         use: 'file-loader',
       },
       {
@@ -85,6 +87,7 @@ const config = (env) => ({
   plugins: [
     new HtmlWebpackPlugin({
       template: 'public/index.html',
+      favicon: 'src/assets/img/favicon.png',
     }),
     env && env.analyze ? new BundleAnalyzerPlugin() : new NothingPlugin(),
     env && env.NODE_ENV === 'production'
@@ -93,6 +96,7 @@ const config = (env) => ({
           filename: '[name].css',
         })
       : new NothingPlugin(),
+    new Dotenv(),
   ],
 });
 
