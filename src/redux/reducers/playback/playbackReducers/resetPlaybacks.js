@@ -1,7 +1,5 @@
 import initialState from '../initialState';
 
-const resetPlaybacks = () => {
-  return initialState;
-};
+const resetPlaybacks = () => initialState;
 
 export default resetPlaybacks;

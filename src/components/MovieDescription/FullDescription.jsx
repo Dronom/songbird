@@ -58,14 +58,14 @@ FullDescription.defaultProps = {
 FullDescription.propTypes = {
   t: PropTypes.func.isRequired,
   description: PropTypes.shape({
-    name: PropTypes.string.isRequired,
+    name: PropTypes.string,
     original_title: PropTypes.string,
     poster_path: PropTypes.string,
     title: PropTypes.string,
     original_name: PropTypes.string,
     overview: PropTypes.string,
-    vote_average: PropTypes.string,
-    genre_ids: PropTypes.arrayOf([PropTypes.number]),
+    vote_average: PropTypes.number,
+    genre_ids: PropTypes.arrayOf(PropTypes.number),
   }),
 };
 

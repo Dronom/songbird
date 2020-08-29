@@ -1,5 +1,3 @@
-const setActiveMovie = (action) => {
-  return action.payload.movie;
-};
+const setActiveMovie = (action) => action.payload.movie;
 
 export default setActiveMovie;

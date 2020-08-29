@@ -3,9 +3,9 @@ import { useSelector } from 'react-redux';
 import Speech from 'speak-tts';
 import PropTypes from 'prop-types';
 
-import SvgPlay from '../../assets/img/play.svg';
-import SvgPause from '../../assets/img/pause.svg';
-import SvgStop from '../../assets/img/stop.svg';
+import Pause from './Pause';
+import Play from './Play';
+import Stop from './Stop';
 
 const setSpeechLang = (lang) => {
   if (lang === 'en') {
@@ -30,36 +30,12 @@ const Playback = ({ text, playback, onClick, pauseClick, stopButton, stopClick }
     <div className="playback-buttons">
       <div className="playback-button" aria-hidden="true">
         {playback.isPlaying ? (
-          <SvgPause
-            onClick={() => {
-              speech.pause();
-
-              pauseClick();
-            }}
-          />
+          <Pause speech={speech} pauseClick={pauseClick} />
         ) : (
-          <SvgPlay
-            onClick={() => {
-              speech.speak({ text, queue: false });
-
-              onClick();
-            }}
-          />
+          <Play text={text} speech={speech} onClick={onClick} />
         )}
       </div>
-      {stopButton && (
-        <div
-          className="playback-button stop"
-          onClick={() => {
-            speech.cancel();
-
-            stopClick();
-          }}
-          aria-hidden="true"
-        >
-          <SvgStop />
-        </div>
-      )}
+      <Stop stopButton={stopButton} speech={speech} stopClick={stopClick} />
     </div>
   );
 };
@@ -74,11 +50,11 @@ Playback.propTypes = {
 };
 
 Playback.defaultProps = {
+  text: '',
   stopButton: false,
   onClick: () => {},
   stopClick: () => {},
   pauseClick: () => {},
-  text: '',
 };
 
 export default Playback;

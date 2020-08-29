@@ -1,5 +1,6 @@
-const pauseDescription = (action, state) => {
-  return { ...state, description: { ...state.description, isPlaying: false } };
-};
+const pauseDescription = (action, state) => ({
+  ...state,
+  description: { ...state.description, isPlaying: false },
+});
 
 export default pauseDescription;
