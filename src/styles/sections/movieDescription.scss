@@ -1,0 +1,97 @@
+.movies-description {
+  margin-left: auto;
+  width: 48%;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__poster {
+    object-fit: cover;
+    margin-right: 15px;
+    height: 300px;
+    width: 200px;
+
+    @media screen and (max-width: $device-width-large) {
+      margin: 0 auto;
+    }
+  }
+
+  & .movie {
+    &-information {
+      flex-grow: 1;
+      width: 180px;
+      margin-bottom: 15px;
+
+      @media screen and (max-width: $device-width-large) {
+        width: 100%;
+        margin-top: 15px;
+      }
+    }
+
+    &-selected {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &-title {
+      font-size: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+
+      &-original {
+        margin-bottom: 15px;
+        font-size: 15px;
+
+        &::before,
+        &::after {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 1px;
+          background-color: #444;
+        }
+
+        &::before {
+          margin-bottom: 10px;
+        }
+        &::after {
+          margin-top: 10px;
+        }
+      }
+    }
+
+    &-release {
+      font-size: 15px;
+    }
+
+    &-overview {
+      margin-top: 15px;
+      width: 100%;
+    }
+
+    &-rating {
+      margin-bottom: 15px;
+    }
+
+    &-instruction {
+      font-size: 18px;
+    }
+  }
+
+  & .genre {
+    margin-right: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #d7d7d7;
+    border-radius: 4px;
+    padding: 5px 10px;
+
+    &-ul {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  @media screen and (max-width: $device-width-medium) {
+    width: 100%;
+  }
+}

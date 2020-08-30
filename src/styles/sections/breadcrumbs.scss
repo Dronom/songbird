@@ -1,0 +1,38 @@
+.breadcrumbs {
+  margin-bottom: 30px;
+  width: 100%;
+
+  &__ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #007c5d;
+    border-radius: 10px;
+  }
+
+  &__step {
+    padding: 5px;
+    background-color: #007c5d;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 18px;
+
+    &:first-child {
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+    @media screen and (max-width: $device-width-small) {
+      width: 33%;
+    }
+  }
+}
+
+.current {
+  background-color: #00ab90;
+}

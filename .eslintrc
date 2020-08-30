@@ -3,5 +3,5 @@
   "env": { "browser": true },
   "extends": ["airbnb", "prettier", "prettier/react"],
   "plugins": ["import", "jsx-a11y", "react", "react-hooks"],
-  "rules": { "strict": 0 }
+  "rules": { "strict": 0, "import/prefer-default-export": 0, "no-param-reassign": 0 }
 }

@@ -1,0 +1,19 @@
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  min-height: 75px;
+
+  .quiz {
+    &-logo {
+      position: absolute;
+      left: 0;
+      width: 150px;
+    }
+
+    &-score {
+      font-size: 20px;
+    }
+  }
+}

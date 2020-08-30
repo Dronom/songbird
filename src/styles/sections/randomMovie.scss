@@ -1,0 +1,42 @@
+.random-movie-section {
+  display: flex;
+
+  &__poster {
+    object-fit: cover;
+    max-height: 300px;
+    width: 200px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+
+    @media screen and (max-width: $device-width-small) {
+      margin-top: 15px;
+      margin-left: 0;
+    }
+  }
+
+  &__name {
+    font-size: 30px;
+    margin-bottom: 15px;
+
+    @media screen and (max-width: $device-width-small) {
+      text-align: center;
+    }
+  }
+
+  &__overview {
+    font-size: 20px;
+  }
+
+  & .playback-buttons {
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: $device-width-small) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
